@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+$primary-color: #333333;
+$ligth-color: #f9f9f9;
+
+$light-green: #baebe1;
+$dark-green: #3ac5a9;
+
+
+$primary-font: 'Roboto',
+sans-serif;
+
+$padding-columns: .25rem;
+
+$breakpoint-mobile: 36em;
+$breakpoint-tablet: 48em;
+$breakpoint-desktop: 62.5em;
+$breakpoint-large-desktop: 75em;
+$breakpoint-full-hd: 90em;
+
+$grid-columns: 12;
+
+
+/* basic style */
+
+body {
+    font: 90% $primary-font;
+    color: $primary-color;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-green;
+}
+
+h2 {
+    color: $dark-green;
+}
+
+ul,
+menu,
+dir {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* header */
+
+header {
+    padding: 1.75rem 0 1.75rem 0;
+
+    .logo {
+        font-size: 1.1875rem;
+        font-weight: 600;
+
+        i {
+            background: $dark-green;
+            padding: 0.625rem;
+            border-radius: 5px;
+            color: #fff;
+            margin-right: 0.625rem;
+        }
+    }
+}
+
+
+
+
+/* navigation */
+nav {
+    background: $ligth-color;
+    height: 2.4375rem;
+
+    .breadcrumb {
+        display: flex;
+    }
+}
+
+
+/* banner */
+.banner-header {
+    background: $light-green;
+    padding: 2.625rem 0 2.625rem 0;
+    display: flex;
+    border-top: 2px solid #b6e6dd;
+
+    .item {
+        display: inline-flex;
+        --padding: 0 4.0625rem 0 0;
+        color: #6b777b;
+        font-size: 0.8125rem;
+
+
+        i {
+            color: $dark-green;
+            font-size: 2.5rem;
+            font-weight: 600;
+            padding: 0 1.375rem 0 0;
+
+        }
+
+        span {
+            display: block;
+            font-weight: 600;
+            color: $primary-color;
+            font-size: 1.4rem;
+        }
+    }
+
+}
+
+.table-users {
+
+    padding: 0.85rem 0 2.5625rem 0;
+
+
+
+    h1 {
+        font-size: 2.125rem;
+        font-weight: 300;
+    }
+}
+
+.users {
+
+    width: 100%;
+    border-collapse: collapse;
+
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+        background: $ligth-color;
+    }
+
+    td:first-child,
+    th:first-child {
+        padding: 0 0 0 1.25rem;
+    }
+
+    tr:hover {
+        background: #e3e3e3;
+    }
+
+    th {
+        background: #fff;
+        color: $primary-color;
+        font-weight: 600;
+    }
+
+    td,
+    th {
+        padding: 1.25rem 0 1.25rem 0;
+        text-align: left;
+    }
+
+
+
+
+}
+
+
+/* responsive */
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+[class*="col"] {
+    float: left;
+    padding: $padding-columns;
+    min-height: 1px;
+}
+
+
+
+
+/* mobile size */
+@media only screen and(max-width: $breakpoint-mobile) {
+    .container {
+        width: 540px;
+        max-width: 100%;
+    }
+
+    @for $i from 1 through $grid-columns {
+        .col-mb-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+/* tablet size */
+@media only screen and(min-width: $breakpoint-tablet) {
+    .container {
+        width: 720px;
+        max-width: 100%;
+    }
+
+    @for $i from 1 through $grid-columns {
+        .col-tb-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+/* desktop medium size */
+@media only screen and(min-width: $breakpoint-desktop) {
+    .container {
+        width: 960px;
+        max-width: 100%;
+    }
+
+    @for $i from 1 through $grid-columns {
+        .col-md-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+/* desktop large size */
+
+@media only screen and(min-width: $breakpoint-large-desktop) {
+    .container {
+        width: 1250px;
+        max-width: 100%;
+    }
+
+    @for $i from 1 through $grid-columns {
+        .col-lg-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+/* desktop extra size */
+@media only screen and(min-width: $breakpoint-full-hd) {
+    .container {
+        width: 1140px;
+        max-width: 100%;
+    }
+
+    @for $i from 1 through $grid-columns {
+        .col-ex-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
