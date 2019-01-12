@@ -1,16 +1,21 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .container,
-.row, .container-small {
+.row,
+.container-small {
   *zoom: 1;
 }
 .container:before,
-.row:before, .container-small:before, .container:after,
-.row:after, .container-small:after {
+.row:before,
+.container-small:before, .container:after,
+.row:after,
+.container-small:after {
   content: " ";
   display: table;
 }
 .container:after,
-.row:after, .container-small:after {
+.row:after,
+.container-small:after {
   clear: both;
 }
 
@@ -20,6 +25,7 @@ body {
   color: #333333;
   margin: 0;
   padding: 0;
+  padding-bottom: 5rem;
 }
 
 a {
@@ -45,8 +51,9 @@ dir {
   border: 1px solid #d7d7d7;
   padding: 0.5375rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
-.form-group input :focus {
+.form-group input:focus {
   border-color: #3ac5a9;
 }
 .form-group label {
@@ -90,14 +97,34 @@ nav {
   background: #f9f9f9;
   height: 2.4375rem;
 }
-nav .breadcrumb {
+nav ul.breadcrumb {
   display: flex;
+  align-items: center;
+  height: inherit;
+}
+nav ul.breadcrumb li .home {
+  font-size: 0.75rem;
+  color: #3ac5a9;
+}
+nav ul.breadcrumb li + li:before {
+  font-family: "Font Awesome 5 Free";
+  padding: 0 0.85rem 0 0.85rem;
+  font-size: 1.3rem;
+  content: "" !important;
 }
 
-section .title h1 {
+section .title {
   position: relative;
+  display: block;
+  height: 2.75rem;
+  padding: 2.5rem 0 2.3rem 0;
+}
+section .title h1 {
   font-size: 2.125rem;
   font-weight: 300;
+  padding: 0;
+  margin: 0;
+  float: left;
 }
 section .title h1 span {
   background-color: white;
@@ -109,9 +136,23 @@ section .title h1:after {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 0.5em;
+  height: 1.68em;
   border-top: 3px solid #f1f1f1;
   z-index: -1;
+}
+section .title #search-bar {
+  background: white;
+  float: right;
+  display: block;
+  padding-left: 2.375rem;
+}
+section .title #search-bar input {
+  background: #fff;
+  color: #9c9999;
+  border: 1px solid #cccccc;
+  padding: 0.575rem;
+  width: 18.75rem;
+  border-radius: 6px;
 }
 
 /* banner */
@@ -188,6 +229,14 @@ section .title h1:after {
   padding-top: 2.75rem;
   width: 80%;
 }
+.container-small .form {
+  display: flex;
+  align-items: start;
+}
+.container-small .form .form-col {
+  width: 50%;
+  padding-right: 4.8rem;
+}
 
 .help-message {
   float: left;
@@ -229,7 +278,8 @@ section .title h1:after {
   margin-left: auto;
 }
 
-.container, .container-small {
+.container,
+.container-small {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -238,7 +288,8 @@ section .title h1:after {
 }
 
 .container,
-.row, .container-small {
+.row,
+.container-small {
   box-sizing: border-box;
 }
 
